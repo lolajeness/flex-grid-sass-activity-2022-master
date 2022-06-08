@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Grid | Advanced CSS</title>
+    <link rel="stylesheet" href="stylesheets/page-styling.css" />
+    <style>
+      section {
+        /*
+        display: -ms-grid;
+        display: -moz-grid;
+        display: grid;
+        grid-template-rows: 500px 600px 400px 500px;
+        grid-template-columns: 750px 800px 550px;
+        -ms-grid-rows: repeat(2, 2fr);
+        -ms-grid-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto-fill, 300px);
+        grid-template-columns: repeat(auto-fill, 400px);
+        */
+        grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 10px;
+
+        grid-template-areas:
+          "image5 image6 image6 grid-area:image5"
+          "image11 image6 image 6"
+          "image7 image7 image10"
+          "image8 image2 image9";
+      }
+
+      img {
+        width: 100%;
+      }
+      #image3 {
+        /*
+        this styles the ID with image 3 to start at the first row
+         line and the second column line. The ID of image3 then stops at row line 3.
+        */
+        grid-area: 1 / 2 / 3 /4;
+      }
+      #image4 {
+        grid-area: 3 / 1 / span 2 / span 2;
+      }
+      #image5 {
+        grid-area: image5;
+      }
+      #image6 {
+        grid-area: image6;
+      }
+      #image7 {
+        grid-area: image7;
+      }
+      #image8 {
+        grid-area: image8;
+      }
+      #image9 {
+        grid-area: image9;
+      }
+      #image10 {
+        grid-area: image10;
+      }
+      #image11 {
+        grid-area: image11;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Prints</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li>
+          <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <header>
+      <h1>Advanced CSS Website</h1>
+    </header>
+    <main>
+      <h2>CSS Grid Photo Gallery</h2>
+      <section>
+        <img src="arctic fox.jfif` " id="image1" />
+        <img src="badger.jfif" id="image2" />
+        <img src="beaver.jfif" id="image3" />
+        <img src="bighorn sheep.jfif" id="image4" />
+        <img src="brown bear.jfif" id="image5" />
+        <img src="goose.jfif" id="image6" />
+        <img src="gray whale.jfif" id="image7" />
+        <img src="lemming.jfif" id="image8" />
+        <img src="lynx.jfif" id="image9" />
+        <img src="moose.jfif" id="image10" />
+        <img src="polar bear.jfif" id="image11" />
+        <img src="wolverine.jfif" id="image12" />
+      </section>
+    </main>
+  </body>
+</html>
